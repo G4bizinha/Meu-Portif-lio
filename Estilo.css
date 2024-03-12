@@ -1,0 +1,23 @@
+h1 {
+    color: #FF0000;
+}
+
+h2 {
+    color: #FF0000;
+}
+p {
+    color: #0000FF;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.vermelho {
+    color: #FF0000;
+}
+
+.grande {
+    font-size: 48px;
+}
+
+.Segoe {
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
