@@ -1,0 +1,33 @@
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    ul {
+        list-style-type: square;
+        }
+
+    .roboto-medium {
+        font-family: "Roboto", sans-serif;
+        font-weight: 600;
+        font-style: normal;
+    }
+
+    .Portifolio{
+        display: flex;
+        justify-content: center;
+        background: rgb(215,115,159);
+        background: radial-gradient(circle, rgba(215,115,159,1) 10%, rgba(148,187,233,1) 94%);
+        margin-top: 12rem;
+    }
+
+    .profile-img{
+        border-radius: 20rem;
+    }
+
+    .profile-info{
+        margin-left: 2rem;
+    }
+
