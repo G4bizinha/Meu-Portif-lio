@@ -15,16 +15,28 @@
         font-style: normal;
     }
 
+    .dancing-script {
+        font-family: "Dancing Script", cursive;
+        font-optical-sizing: auto;
+        font-weight: 40;
+        font-style:normal;
+      }
+    
+    
+
     .Portifolio{
         display: flex;
         justify-content: center;
         background: rgb(215,115,159);
-        background: radial-gradient(circle, rgba(215,115,159,1) 10%, rgba(148,187,233,1) 94%);
-        margin-top: 12rem;
+        background: radial-gradient(circle, rgba(215,115,159,1) 10%, rgb(105, 163, 229) 94%);
+        margin-top: 6rem;
     }
 
     .profile-img{
         border-radius: 20rem;
+        border: 10px solid #f30771;
+        box-shadow: 0 0 30px #050505ec;
+        
     }
 
     .profile-info{
