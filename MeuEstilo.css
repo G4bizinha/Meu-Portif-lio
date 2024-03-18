@@ -9,10 +9,23 @@
         list-style-type: square;
         }
 
+    li{
+        font-family: "Roboto", sans-serif;
+        margin-left: 3px; 
+        font-weight: normal;
+        font-style: normal;
+      }
+
     .roboto-medium {
         font-family: "Roboto", sans-serif;
         font-weight: 600;
         font-style: normal;
+    }
+
+    .roboto-italic {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-style: italic;
     }
 
     .dancing-script {
@@ -21,7 +34,28 @@
         font-weight: 40;
         font-style:normal;
       }
+
+      .lable {
+        display: flex; 
+      }
     
+      .lable1 {
+        font-weight: bold;
+      }
+
+      .mt-1 {
+        margin-top: 1rem;
+      }
+
+      .lable2 {
+        margin-left: 3px; 
+        font-weight: lighter;
+      }
+
+      .lable3 {
+        padding: 1rem;
+      }
+
     
 
     .Portifolio{
