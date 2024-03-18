@@ -12,8 +12,8 @@
     li{
         font-family: "Roboto", sans-serif;
         margin-left: 3px; 
-        font-weight: normal;
-        font-style: normal;
+        font-weight: 400;
+        font-style:normal;
       }
 
     .roboto-medium {
@@ -35,16 +35,41 @@
         font-style:normal;
       }
 
+      .cor {
+        background-color: #f3f5e7;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 2px 2px #291a27;
+        transition: background-color 0.5s;
+      }   
+      
+      .cor2 {
+        background-color: #f3f5e7;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 2px 2px #291a27;
+        }
+
+      .cor3 {
+      background-color: #ff00d94b;
+      padding: 20px;
+      border-radius: 5px;
+        }
+
+      .cor:hover {
+      background-color: #0b0b0b;
+      box-shadow: 0 0 0;
+      transition: background-color 0.5s;
+      color:white;
+        }
+
+
       .lable {
         display: flex; 
       }
     
       .lable1 {
         font-weight: bold;
-      }
-
-      .mt-1 {
-        margin-top: 1rem;
       }
 
       .lable2 {
@@ -54,9 +79,28 @@
 
       .lable3 {
         padding: 1rem;
+        margin-bottom: 1rem;
       }
 
-    
+      .mt-1 {
+        margin-top: 1rem;
+      }
+
+      .collapsible {
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+      }
+      
+      .content {
+        padding: 0 18px;
+        display: none;
+        overflow: hidden;
+      }
 
     .Portifolio{
         display: flex;
@@ -73,7 +117,14 @@
         
     }
 
+    .profile-img:hover {
+      transform:scale(0.8);
+      transition: transform 1s;
+    }
+
     .profile-info{
         margin-left: 2rem;
     }
+
+    
 

@@ -33,30 +33,30 @@
                 </div>
             </div>
 
-        <div class= "lable mt-1">
+        <div class= "lable mt-1 lable3 cor2">
             <h3 class= "lable1">Idade (Age):</h3>
             <h3 class= "lable2">21</h3>
         </div>
         <hr>
-        <div class= "lable mt-1">
+        <div class= "lable mt-1 lable3 cor2">
             <h3 class= "lable1">Cidade(City):</h3>
             <h3 class= "lable2">Viamão-RS</h3>
         </div>
         <hr/>
-        <div class= "lable mt-1">
+        <div class= "lable mt-1 lable3 cor2">
             <h3 class= "lable1">Graduação (Graduation):</h3>
             <h3 class= "lable2">Ciência da Computação (Computer Science)</h3>
         </div>
         <hr>
-        <div class= "lable mt-1">
+        <div class= "lable mt-1 lable3 cor2">
             <h3 class= "lable1">Período da Graduação (Period of Graduation):</h3>
             <h3 class= "lable2">6</h3>
         </div>
         <hr>
             <div>
-                <h3 class= "lable1 mt-1">Certificações (Certifications):</h3>     
-                    <ul class="lable3">
-                    <li> <h3 class="lable2">Escola e Faculdades QI - Informática - Básico (Basic Informatic)</h3></li>
+                <h3 class= "lable1 mt-1 lable3 cor collapsible">Certificações (Certifications):</h3>     
+                    <ul class= "lable2 lable3 cor3 content">
+                    <li> Escola e Faculdades QI - Informática - Básico (Basic Informatic)</li>
                     <li>CISCO - CyberSecurity Essentials</li>
                     <li>CISCO - CyberOps</li>
                     <li>IFRS - Inglês Básico (Basic English)</li>
@@ -67,16 +67,16 @@
             </div>
             <hr>
             <div>
-                <h3 class= "lable1 mt-1">Minhas Experiências Profissionais (My Professional Experiences):</h3>
-                        <ul class="lable2 lable3">
+                <h3 class= "lable1 mt-1 lable3 cor collapsible">Minhas Experiências Profissionais (My Professional Experiences):</h3>
+                        <ul class="lable2 lable3 cor3 content">
                         <li>Manutenção de Hardware trabalhando como estagiária no Departamento de Informática da Brigada Militar-RS</li>
                         <li>Suporte Técnico estagiando na Secretária de Sistema Penal e Socioeducativo (SSPS) no Centro Administrativo Fernando Ferrari (CAFF)</li>
                         </ul>
             </div>
             <hr>
             <div>
-            <h3 class= "lable1 mt-1">Linguagens de Programação e Ferramentas (Program Language and Tools):</h3>
-              <div class="grid md:grid-cols-10 grid-cols-10 gap-1 mt-1">
+            <h3 class= "lable1 mt-1 lable3 cor collapsible">Linguagens de Programação e Ferramentas (Program Language and Tools):</h3>
+              <div class="grid md:grid-cols-10 grid-cols-10 gap-1 mt-1 cor3 content">
                 <img class="p-1" height="40" width="40" src="https://cdn.simpleicons.org/c" />
                 <img class="p-1" height="40" width="40" src="https://cdn.simpleicons.org/c++" />
                 <img class="p-1" height="40" width="40" src="https://cdn.simpleicons.org/Mysql" />
@@ -93,6 +93,22 @@
             </a> 
         </div>
     </div>
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+              content.style.display = "none";
+            } else {
+              content.style.display = "block";
+            }
+          });
+        }
+        </script>
     </body>
 </html>
 
