@@ -51,7 +51,7 @@
         }
 
       .cor3 {
-      background-color: #ff00d94b;
+      background-color: #f525d62d;
       padding: 20px;
       border-radius: 5px;
         }
@@ -74,7 +74,8 @@
 
       .lable2 {
         margin-left: 3px; 
-        font-weight: lighter;
+        font-weight: normal;
+        max-width: 60ch;
       }
 
       .lable3 {
@@ -85,7 +86,10 @@
       .mt-1 {
         margin-top: 1rem;
       }
-
+      
+      .mt-5 {
+        margin-top: 5rem;
+      }
       .collapsible {
         cursor: pointer;
         padding: 18px;
@@ -93,7 +97,6 @@
         border: none;
         text-align: left;
         outline: none;
-        font-size: 15px;
       }
       
       .content {
