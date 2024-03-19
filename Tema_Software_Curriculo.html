@@ -51,7 +51,10 @@
         </div>
         <hr>
             <div>
-                <h3 class= "lable1 mt-1 lable3 cor collapsible">Certificações (Certifications): <img src="https://static.thenounproject.com/png/2228268-200.png"/></h3>   
+              <div class="cor collapsible box-collapsible mt-1 label1 lable3">
+                <h3>Certificações (Certifications):</h3>
+                <div class="arrow-bottom"></div>
+              </div>
                     <ul class= "lable3 cor3 content">
                     <li><h3 class="lable2">Escola e Faculdades QI - Informática - Básico (Basic Informatic)</h3></li>
                     <li><h3 class="lable2">CISCO - CyberSecurity Essentials</h3></li>
@@ -64,7 +67,7 @@
             </div>
             <hr>
             <div>
-                <h3 class= "lable1 mt-1 lable3 cor collapsible">Minhas Experiências Profissionais (My Professional Experiences):</h3>
+                <h3 class= "lable1 mt-1 lable3 cor collapsible box-collapsible">Minhas Experiências Profissionais (My Professional Experiences):</h3>
                         <ul class="lable3 cor3 content">
                         <li><h3 class="lable2">Manutenção de Hardware trabalhando como estagiária no Departamento de Informática da Brigada Militar-RS</h3></li>
                         <li><h3 class="lable2">Suporte Técnico estagiando na Secretária de Sistema Penal e Socioeducativo (SSPS) no Centro Administrativo Fernando Ferrari (CAFF)</h3></li>
@@ -138,7 +141,6 @@
     <script>
         var coll = document.getElementsByClassName("collapsible");
         var i;
-        
         for (i = 0; i < coll.length; i++) {
           coll[i].addEventListener("click", function() {
             this.classList.toggle("active");
