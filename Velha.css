@@ -16,6 +16,42 @@ html, body {
     display: none;
   }
   
+  .modal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* cor de fundo semitransparente */
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: 250px auto;
+    padding: 30px;
+    border: 2px solid #180c0c;
+    border-radius: 1rem;
+    width: 250px;
+    box-shadow: 10px 10px 2px blueviolet;
+  }
+
+  .center {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .fredoka{
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:"wdth" 100;
+  }
+  
   
   
   /* Style */
