@@ -3,42 +3,93 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>JOGO Da VEIA</title>
+    <title>JOGO DA VÉIA</title>
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/128/518/518215.png">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" type="text/css" href="Velha.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
 </head>
 <body>
   <div class="modal" id="myModal">
     <div class="modal-content">
       <h3 class="fredoka">Qual você escolhe?</h3>
       <div class="center">
-        <button class="close">X</button> ou <button class="close">O</button>?
+        <button class="xis">❌</button>
+         ou 
+        <button class="bolinha">⭕</button>?
       </div>
     </div>
   </div>
-    <form>
-      <table>
-        <tr>
-            <td id="x0-1" onclick="clique('x0-1')">&nbsp;</td>
-            <td id="x0-2" onclick="clique('x0-2')">&nbsp;</td>
-            <td id="x0-3" onclick="clique('x0-3')">&nbsp;</td>
-        </tr>
-        <tr>
-            <td id="x1-1" onclick="clique('x1-1')">&nbsp;</td>
-            <td id="x1-2" onclick="clique('x1-2')">&nbsp;</td>
-            <td id="x1-3" onclick="clique('x1-3')">&nbsp;</td>
-        </tr>
-        <tr>
-            <td id="x2-1" onclick="clique('x2-1')">&nbsp;</td>
-            <td id="x2-2" onclick="clique('x2-2')">&nbsp;</td>
-            <td id="x2-3" onclick="clique('x2-3')">&nbsp;</td>
-        </tr>
-    </table>
-      
+  
         <h1 class="title">Jogo da Velha</h1>
+
+        <table class="board">
+          <tr>
+              <td class="cell" onclick="clique('x0-1')">
+                  <div class="mark mark--x"></div>
+                  <div class="mark mark--o"></div>
+                  <label class="label label--0" for="x0-1"></label>
+                
+              </td>
+              <td class="cell" onclick="clique('x0-2')">
+                  <div class="mark mark--x"></div>
+                  <div class="mark mark--o"></div>
+                  <label class="label label--0" for="x0-2"></label>
+                 
+              </td>
+              <td class="cell" onclick="clique('x0-3')">
+                  <div class="mark mark--x"></div>
+                  <div class="mark mark--o"></div>
+                  <label class="label label--0" for="x0-3"></label>
+                  
+              </td>
+          </tr>
+          <tr>
+            <td class="cell" onclick="clique('x2-1')">
+                <div class="mark mark--x"></div>
+                <div class="mark mark--o"></div>
+                <label class="label label--0" for="x2-1"></label>
+                &nbsp;
+            </td>
+            <td class="cell" onclick="clique('x2-2')">
+                <div class="mark mark--x"></div>
+                <div class="mark mark--o"></div>
+                <label class="label label--0" for="x2-2"></label>
+                &nbsp;
+            </td>
+            <td class="cell" onclick="clique('x2-3')">
+                <div class="mark mark--x"></div>
+                <div class="mark mark--o"></div>
+                <label class="label label--0" for="x2-3"></label>
+                &nbsp;
+            </td>
+        </tr>
+        <tr>
+          <td class="cell" onclick="clique('x1-1')">
+              <div class="mark mark--x"></div>
+              <div class="mark mark--o"></div>
+              <label class="label label--0" for="x1-1"></label>
+              &nbsp;
+          </td>
+          <td class="cell" onclick="clique('x1-2')">
+            &nbsp;
+              <div class="mark mark--x"></div>
+              <div class="mark mark--o"></div>
+              <label class="label label--0" for="x1-2"></label>
+              &nbsp;
+          </td>
+          <td class="cell" onclick="clique('x1-3')">
+              <div class="mark mark--x"></div>
+              <div class="mark mark--o"></div>
+              <label class="label label--0" for="x1-3"></label>
+              &nbsp;
+          </td>
+      </tr>
+          
+      </table>
         
         <div class="board">
           <div class="cell cell--1">
@@ -125,7 +176,7 @@
         </div>
         
         <div class="endgame">
-          <span class="msg msg--o-win">You lost to a stylesheet!</span>
+          <span class="msg msg--o-win">!</span>
           <span class="msg msg--draw">Draw!</span>
           <button class="endgame-newgame" type="reset">Try again</button>
         </div>
@@ -133,7 +184,5 @@
         <div class="bar">
           <button class="newgame" type="reset">Recomeçar</button>
         </div>
-      </form>
-    <script src="script.js"></script>
 </body>
 </html>

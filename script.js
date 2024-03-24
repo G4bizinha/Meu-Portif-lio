@@ -1,22 +1,12 @@
 let jogador = 'X';
 
-function clique(id) {
-    let celula = document.getElementById(id);
-    if (celula.innerHTML === '&nbsp;') {
-        celula.innerHTML = jogador;
-        if (verificarVitoria()) {
-            alert('Jogador ' + jogador + ' venceu!');
-            reiniciarJogo();
-        } else if (verificarEmpate()) {
-            alert('Empate!');
-            reiniciarJogo();
-        } else {
-            jogador = jogador === 'X' ? 'O' : 'X';
-        }
-    } else {
-        alert('Célula ocupada!');
+
+function clique(element) {
+    if (element.innerHTML.trim() === "") {
+        element.innerHTML = "❌";
     }
 }
+
 
 function verificarVitoria() {
     const linhas = [
@@ -66,18 +56,29 @@ function reiniciarJogo() {
 // Modal 
 
 
-// Obter elementos do DOM
-var modal = document.getElementById('myModal');
-var closeModalSpan = document.getElementsByClassName('close')[0];
+document.addEventListener("DOMContentLoaded", function() {
+    // Obter elementos do DOM
+    var modal = document.getElementById('myModal');
+    var O = document.getElementsByClassName('bolinha')[0];
+    var X = document.getElementsByClassName('xis')[0];
 
-// Quando o usuário clicar no 'x', fechar o modal
-closeModalSpan.onclick = function() {
-  modal.style.display = 'none';
-}
+    // Verificar se os elementos foram encontrados antes de atribuir eventos
+    if (X && O) {
+        X.onclick = function() {
+            modal.style.display = 'none';
+            console.log("Você selecionou o ❌")
+        }
 
-// Quando o usuário clicar fora do modal, fechar o modal
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = 'none';
-  }
-}
+        O.onclick = function() {
+            modal.style.display = 'none';
+            console.log("Você selecionou o ⭕")
+        }
+    }
+
+    // Quando o usuário clicar fora do modal, fechar o modal
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+});
