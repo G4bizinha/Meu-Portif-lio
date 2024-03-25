@@ -52,11 +52,13 @@ html, body {
     font-variation-settings:"wdth" 100;
   }
 
-  .pixelify-sans {
+  .pixelify-sans{
     font-family: "Pixelify Sans", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 25px;
-    font-style: italic;
+    font-weight: 10rem;
+    font-style: normal;
+    padding-bottom: value;
+    border-bottom-style: solid;
   }
 
   .body{
@@ -79,7 +81,7 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #999;
+    color: #464848;
   }
   
   .board {
@@ -94,6 +96,10 @@ html, body {
   }
 
   .cell {
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 50px;
+    font-style: normal;
     position: relative;
     width: 88px;
     height: 88px;
@@ -101,6 +107,8 @@ html, body {
     background-color: transparent;
     border-color: rgb(95, 95, 95);
     border-spacing: 0;
+    
+    
   }
  
   .cell--1,
@@ -134,13 +142,6 @@ html, body {
     z-index: 1;
     display: none;
     animation: mark-entrance 0.2s cubic-bezier(0, 0.8, 0.2, 1.2) both;
-  }
-  
-  @keyframes mark-entrance {
-    from {
-      opacity: 0;
-      transform: scale(0) rotate(-15deg);
-    }
   }
   
   .mark--o {
@@ -201,13 +202,6 @@ html, body {
     animation: endgame-entrance 0.3s 0.43s cubic-bezier(0, 0.8, 0.4, 1.2) both;
   }
   
-  @keyframes endgame-entrance {
-    from {
-      opacity: 0;
-      transform: translate(-50%, -50%) scale(0.5);
-    }
-  }
-  
   .msg {
     display: block;
     text-align: center;
@@ -215,7 +209,7 @@ html, body {
     font-weight: bold;
     font-size: 24pt;
     line-height: 1.5;
-    color: #777;
+    color: #0f0e0e;
   }
   
   .msg--o-win {
@@ -250,13 +244,14 @@ html, body {
   }
   
   .newgame {
-    border: none;
+    border: 2px solid #180c0c;
     padding: 18px;
     text-transform: uppercase;
-    background: #d6d6d6;
+    background: #ffffff;
+    box-shadow: 5px 2px 2px rgb(9, 0, 17);
     border-radius: 6px;
     font-weight: bold;
-    color: #909090;
+    color: #000000;
     font-size: 12pt;
     cursor: pointer;
   }
@@ -264,5 +259,7 @@ html, body {
   .newgame:hover {
     opacity: 0.8;
   }
+
+
 
   

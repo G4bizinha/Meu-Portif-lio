@@ -141,7 +141,6 @@ function getSymbol(position) {
 }
 
 
-
 function checkDraw() {
     for (let row of gameBoard) {
         for (let cell of row) {
