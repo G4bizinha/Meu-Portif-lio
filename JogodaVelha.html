@@ -10,9 +10,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
     <script src="script.js"></script>
 </head>
-<body>
+<body class="body">
   <div class="modal" id="myModal">
     <div class="modal-content">
       <h3 class="fredoka">Qual você escolhe?</h3>
@@ -23,166 +24,46 @@
       </div>
     </div>
   </div>
-  
         <h1 class="title">Jogo da Velha</h1>
-
         <table class="board">
           <tr>
-              <td class="cell" onclick="clique('x0-1')">
-                  <div class="mark mark--x"></div>
-                  <div class="mark mark--o"></div>
-                  <label class="label label--0" for="x0-1"></label>
-                
-              </td>
-              <td class="cell" onclick="clique('x0-2')">
-                  <div class="mark mark--x"></div>
-                  <div class="mark mark--o"></div>
-                  <label class="label label--0" for="x0-2"></label>
-                 
-              </td>
-              <td class="cell" onclick="clique('x0-3')">
-                  <div class="mark mark--x"></div>
-                  <div class="mark mark--o"></div>
-                  <label class="label label--0" for="x0-3"></label>
-                  
-              </td>
+            <td>
+              <button class="cell cell--1" id="x0-0" onclick="clique(0, 0)"></button>
+            </td>
+            <td>
+              <button class="cell cell--2" id="x0-1" onclick="clique(0, 1)"></button>
+            </td>
+            <td>
+              <button class="cell cell--3" id="x0-2" onclick="clique(0, 2)"></button>
+            </td>
           </tr>
           <tr>
-            <td class="cell" onclick="clique('x2-1')">
-                <div class="mark mark--x"></div>
-                <div class="mark mark--o"></div>
-                <label class="label label--0" for="x2-1"></label>
-                &nbsp;
+            <td>
+              <button class="cell cell--4" id="x1-0" onclick="clique(1, 0)"></button>
             </td>
-            <td class="cell" onclick="clique('x2-2')">
-                <div class="mark mark--x"></div>
-                <div class="mark mark--o"></div>
-                <label class="label label--0" for="x2-2"></label>
-                &nbsp;
+            <td>
+              <button class="cell cell--5" id="x1-1" onclick="clique(1, 1)"></button>
             </td>
-            <td class="cell" onclick="clique('x2-3')">
-                <div class="mark mark--x"></div>
-                <div class="mark mark--o"></div>
-                <label class="label label--0" for="x2-3"></label>
-                &nbsp;
+            <td>
+              <button class="cell cell--6" id="x1-2" onclick="clique(1, 2)"></button>
+          </td>
+          </tr>
+          <tr>
+            <td>
+              <button class="cell cell--7" id="x2-0" onclick="clique(2, 0)"></button>
             </td>
-        </tr>
-        <tr>
-          <td class="cell" onclick="clique('x1-1')">
-              <div class="mark mark--x"></div>
-              <div class="mark mark--o"></div>
-              <label class="label label--0" for="x1-1"></label>
-              &nbsp;
-          </td>
-          <td class="cell" onclick="clique('x1-2')">
-            &nbsp;
-              <div class="mark mark--x"></div>
-              <div class="mark mark--o"></div>
-              <label class="label label--0" for="x1-2"></label>
-              &nbsp;
-          </td>
-          <td class="cell" onclick="clique('x1-3')">
-              <div class="mark mark--x"></div>
-              <div class="mark mark--o"></div>
-              <label class="label label--0" for="x1-3"></label>
-              &nbsp;
-          </td>
-      </tr>
-          
-      </table>
-        
-        <div class="board">
-          <div class="cell cell--1">
-            <div class="mark mark--x"></div>
-            <div class="mark mark--o"></div>
-            <label class="label label--0" for="x0-1"></label>
-            <label class="label label--1" for="x1-1"></label>
-            <label class="label label--2" for="x2-1"></label>
-            <label class="label label--3" for="x3-1"></label>
-            <label class="label label--4" for="x4-1"></label>
-          </div>
-          <div class="cell cell--2">
-            <div class="mark mark--x"></div>
-            <div class="mark mark--o"></div>
-            <label class="label label--0" for="x0-2"></label>
-            <label class="label label--1" for="x1-2"></label>
-            <label class="label label--2" for="x2-2"></label>
-            <label class="label label--3" for="x3-2"></label>
-            <label class="label label--4" for="x4-2"></label>
-          </div>
-          <div class="cell cell--3">
-            <div class="mark mark--x"></div>
-            <div class="mark mark--o"></div>
-            <label class="label label--0" for="x0-3"></label>
-            <label class="label label--1" for="x1-3"></label>
-            <label class="label label--2" for="x2-3"></label>
-            <label class="label label--3" for="x3-3"></label>
-            <label class="label label--4" for="x4-3"></label>
-          </div>
-          <div class="cell cell--4">
-            <div class="mark mark--x"></div>
-            <div class="mark mark--o"></div>
-            <label class="label label--0" for="x0-4"></label>
-            <label class="label label--1" for="x1-4"></label>
-            <label class="label label--2" for="x2-4"></label>
-            <label class="label label--3" for="x3-4"></label>
-            <label class="label label--4" for="x4-4"></label>
-          </div>
-          <div class="cell cell--5">
-            <div class="mark mark--x"></div>
-            <div class="mark mark--o"></div>
-            <label class="label label--0" for="x0-5"></label>
-            <label class="label label--1" for="x1-5"></label>
-            <label class="label label--2" for="x2-5"></label>
-            <label class="label label--3" for="x3-5"></label>
-            <label class="label label--4" for="x4-5"></label>
-          </div>
-          <div class="cell cell--6">
-            <div class="mark mark--x"></div>
-            <div class="mark mark--o"></div>
-            <label class="label label--0" for="x0-6"></label>
-            <label class="label label--1" for="x1-6"></label>
-            <label class="label label--2" for="x2-6"></label>
-            <label class="label label--3" for="x3-6"></label>
-            <label class="label label--4" for="x4-6"></label>
-          </div>
-          <div class="cell cell--7">
-            <div class="mark mark--x"></div>
-            <div class="mark mark--o"></div>
-            <label class="label label--0" for="x0-7"></label>
-            <label class="label label--1" for="x1-7"></label>
-            <label class="label label--2" for="x2-7"></label>
-            <label class="label label--3" for="x3-7"></label>
-            <label class="label label--4" for="x4-7"></label>
-          </div>
-          <div class="cell cell--8">
-            <div class="mark mark--x"></div>
-            <div class="mark mark--o"></div>
-            <label class="label label--0" for="x0-8"></label>
-            <label class="label label--1" for="x1-8"></label>
-            <label class="label label--2" for="x2-8"></label>
-            <label class="label label--3" for="x3-8"></label>
-            <label class="label label--4" for="x4-8"></label>
-          </div>
-          <div class="cell cell--9">
-            <div class="mark mark--x"></div>
-            <div class="mark mark--o"></div>
-            <label class="label label--0" for="x0-9"></label>
-            <label class="label label--1" for="x1-9"></label>
-            <label class="label label--2" for="x2-9"></label>
-            <label class="label label--3" for="x3-9"></label>
-            <label class="label label--4" for="x4-9"></label>
-          </div>
-        </div>
-        
-        <div class="endgame">
-          <span class="msg msg--o-win">!</span>
-          <span class="msg msg--draw">Draw!</span>
-          <button class="endgame-newgame" type="reset">Try again</button>
-        </div>
-        
-        <div class="bar">
-          <button class="newgame" type="reset">Recomeçar</button>
+            <td>
+              <button class="cell cell--8" id="x2-1" onclick="clique(2, 1)"></button>
+            </td>
+            <td>
+              <button class="cell cell--9" id="x2-2" onclick="clique(2, 2)"></button>
+            </td>
+          </tr>
+        </table>
+          <div class="bar">
+          <button class="newgame" type="reset" onclick="resetBoard()">Recomeçar</button>
         </div>
 </body>
 </html>
+
+

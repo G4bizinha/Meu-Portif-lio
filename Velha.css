@@ -51,10 +51,20 @@ html, body {
     font-style: normal;
     font-variation-settings:"wdth" 100;
   }
-  
-  
-  
-  /* Style */
+
+  .pixelify-sans {
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 25px;
+    font-style: italic;
+  }
+
+  .body{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
   
   
   form {
@@ -73,20 +83,24 @@ html, body {
   }
   
   .board {
-    flex: 1 1 auto;
     display: grid;
-    grid-template: repeat(3, min-content) / repeat(3, min-content);
     justify-content: center;
     align-content: center;
     position: relative;
+    border-spacing: 0;
+    margin: auto;
+    width: 50%;
+    border: 3px;
   }
 
   .cell {
     position: relative;
     width: 88px;
     height: 88px;
-    border: solid 4px #ddd;
-    gap: 12px;
+    border: solid 6px #ddd;
+    background-color: transparent;
+    border-color: rgb(95, 95, 95);
+    border-spacing: 0;
   }
  
   .cell--1,
@@ -113,55 +127,6 @@ html, body {
     border-bottom-color: transparent;
   }
 
-  .label {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    visibility: hidden;
-    top: 0;
-    left: 0;
-    opacity: 0; /* Torna as labels invisíveis */
-  }
-
-  .label::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 80%;
-    height: 12px;
-    border-radius: 6px;
-    background: #f4f4f4;
-    transform-origin: center;
-    transform: translate(-50%, -50%) rotate(45deg);
-    opacity: 0;
-    transition: opacity 0.2s;
-  }
-  
-  .label::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 80%;
-    height: 12px;
-    border-radius: 6px;
-    background: #f4f4f4;
-    transform-origin: center;
-    transform: translate(-50%, -50%) rotate(-45deg);
-    opacity: 0;
-    transition: opacity 0.2s;
-  }
-  
-  .label:hover::before {
-    opacity: 1;
-  }
-  
-  .label:hover::after {
-    opacity: 1;
-  }
-  
   .mark {
     position: absolute;
     width: 100%;
