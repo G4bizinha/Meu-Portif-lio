@@ -28,6 +28,18 @@ html, body {
     background-color: rgba(0, 0, 0, 0.5); /* cor de fundo semitransparente */
   }
 
+  .modal-1 {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* cor de fundo semitransparente */
+  }
+
   .modal-content {
     background-color: #fefefe;
     margin: 250px auto;

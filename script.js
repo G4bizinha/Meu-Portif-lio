@@ -1,5 +1,6 @@
 
 let currentPlayer = '';
+let currentPlayerOpponent = '';
 
 document.addEventListener("DOMContentLoaded", function() {
     // Obter elementos do DOM
@@ -12,17 +13,43 @@ document.addEventListener("DOMContentLoaded", function() {
         X.onclick = function() {
             modal.style.display = 'none';
             console.log("Você selecionou o ❌")
-            currentPlayer = 'X'
+            currentPlayer = 'X';
+            // Iniciar o jogo com o jogador escolhendo X
+            currentPlayerOpponent = 'O'; // O oponente do jogador é O
+            if (currentPlayer === currentPlayerOpponent) {
+                computadorJogar(); // Se o jogador escolher X, o computador começa a jogar
+            }
         }
 
         O.onclick = function() {
             modal.style.display = 'none';
             console.log("Você selecionou o ⭕")
-            currentPlayer = 'O'
+            currentPlayer = 'O';
+            // Iniciar o jogo com o jogador escolhendo O
+            currentPlayerOpponent = 'X'; // O oponente do jogador é X
+            if (currentPlayer === currentPlayerOpponent) {
+                computadorJogar(); // Se o jogador escolher O, o computador começa a jogar
+            }
         }
     }
 });
 
+
+const cells = document.querySelectorAll('.cell');
+
+const winCombinations = [
+    // Linhas
+    [[0, 0], [0, 1], [0, 2]],
+    [[1, 0], [1, 1], [1, 2]],
+    [[2, 0], [2, 1], [2, 2]],
+    // Colunas
+    [[0, 0], [1, 0], [2, 0]],
+    [[0, 1], [1, 1], [2, 1]],
+    [[0, 2], [1, 2], [2, 2]],
+    // Diagonais
+    [[0, 0], [1, 1], [2, 2]],
+    [[0, 2], [1, 1], [2, 0]],
+];
 
 let gameBoard = [
     ['', '', ''],
@@ -31,16 +58,18 @@ let gameBoard = [
 ];
 
 function clique(x, y) {
+    console.log(x , y)
     const cell = document.getElementById('x' + x + '-' + y);
     if (cell.textContent === '') {
         cell.textContent = currentPlayer;
         checkWin(x, y);
         gameBoard[x][y] = currentPlayer;
         currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-        if (!checkDraw() && currentPlayer === 'O') {
+        if (!checkDraw() && currentPlayer === currentPlayerOpponent) {
            computadorJogar()
         }
     }
+    VitoriaDerrota();
 }
 
 function computadorJogar() {
@@ -49,6 +78,7 @@ function computadorJogar() {
     if (winningMove) {
         fazerJogada(winningMove[0], winningMove[1]);
         return;
+
     }
 
     // Verificar se há uma jogada para bloquear o jogador
@@ -62,19 +92,18 @@ function computadorJogar() {
     jogadaAleatoria();
 }
 
-
-function verificarJogadaVencedora(player) {
+function verificarJogadaVencedora() {
     for (const combination of winCombinations) {
-        const countPlayer = combination.filter(i => cells[i].textContent === player).length;
-        if (countPlayer === 2) {
-            const emptyCellIndex = combination.find(i => cells[i].textContent === '');
-            if (emptyCellIndex !== undefined) {
-                return [Math.floor(emptyCellIndex / 3), emptyCellIndex % 3];
-            }
+        const symbols = combination.map(position => getSymbol(position));
+        if (symbols.every(symbol => symbol === currentPlayer)) {
+            return 0; // Jogador ganhou
+        } else if (symbols.every(symbol => symbol === currentPlayerOpponent)) {
+            return 1; // Computador ganhou
         }
     }
-    return null;
+    return null; // Nenhuma combinação vencedora encontrada
 }
+
 
 function verificarBloqueioJogador() {
     const opponent = currentPlayer === 'X' ? 'O' : 'X';
@@ -99,29 +128,23 @@ function jogadaAleatoria() {
 
 
 function fazerJogada(x, y) {
-    const cell = document.getElementById('x' + x + '-' + y);
-    cell.textContent = currentPlayer;
-    checkWin();
-    gameBoard[x][y] = currentPlayer; // Atualiza o tabuleiro gameBoard
-    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+    if (x >= 0 && x < 3 && y >= 0 && y < 3) {
+        const cell = document.getElementById('x' + x + '-' + y);
+        if (cell) {
+            cell.textContent = currentPlayer;
+            checkWin(); // Verifica se houve um vencedor após a jogada
+            gameBoard[x][y] = currentPlayer; // Atualiza o tabuleiro gameBoard
+            currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+        } else {
+            console.error('Elemento da célula não encontrado:', 'x' + x + '-' + y);
+        }
+    } else {
+        console.error('Coordenadas inválidas:', x, y);
+    }
 }
 
 
 function checkWin() {
-    const winCombinations = [
-        // Linhas
-        [[0, 0], [0, 1], [0, 2]],
-        [[1, 0], [1, 1], [1, 2]],
-        [[2, 0], [2, 1], [2, 2]],
-        // Colunas
-        [[0, 0], [1, 0], [2, 0]],
-        [[0, 1], [1, 1], [2, 1]],
-        [[0, 2], [1, 2], [2, 2]],
-        // Diagonais
-        [[0, 0], [1, 1], [2, 2]],
-        [[0, 2], [1, 1], [2, 0]]
-    ];
-
     for (const combination of winCombinations) {
         const symbol1 = getSymbol(combination[0]);
         const symbol2 = getSymbol(combination[1]);
@@ -149,11 +172,11 @@ function checkDraw() {
             }
         }
     }
-    alert('Empate!');
     return true;
 }
 
 function resetBoard() {
+    var modal = document.getElementById('myModal');
     const buttons = document.querySelectorAll('.cell');
     buttons.forEach(button => {
         button.textContent = ''; // Remover o conteúdo de cada botão
@@ -164,7 +187,30 @@ function resetBoard() {
         ['', '', '']
     ];
     currentPlayer = ''; // Resetar o jogador atual
+    modal.style.display = 'block';
 }
 
+function VitoriaDerrota(){
+    const vencedor = verificarJogadaVencedora();
+    if (vencedor === 0) {
+        const ModalVenceu = document.getElementById('ModalVenceu');
+        ModalVenceu.style.display = 'block';
+        setTimeout(function() {
+            ModalVenceu.style.display = 'none';
+        }, 1000);
+    } else if (checkDraw()) {
+        const ModalEmpate = document.getElementById('ModalEmpate');
+        ModalEmpate.style.display = 'block';
+        setTimeout(function() {
+            ModalEmpate.style.display = 'none';
+        }, 1000);
+    } else if(vencedor === 1){
+        const ModalPerdeu = document.getElementById('ModalPerdeu');
+        ModalPerdeu.style.display = 'block';
+        setTimeout(function() {
+            ModalPerdeu.style.display = 'none';
+        }, 1000);
+    }
 
-// Restante do seu código...
+}
+
